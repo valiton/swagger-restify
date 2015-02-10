@@ -1,16 +1,16 @@
 {
-  "name": "swagger-express",
-  "description": "Document your express rest api by jsDoc or yaml.",
-  "version": "1.0.4",
-  "author": "fliptoo <fliptoo.studio@gmail.com>, sposmen <sposmen@gmail.com>",
+  "name": "swagger-restify",
+  "description": "Document your restify rest api by jsDoc or yaml.",
+  "version": "1.0.0",
+  "author": "fliptoo <fliptoo.studio@gmail.com>, sposmen <sposmen@gmail.com>, eugene@takeaway.com",
   "main": "./index",
   "dependencies": {
-    "express": "3.5.1",
-    "underscore": "*",
+    "async": "~0.2.7",
+    "coffee-script": "*",
     "doctrine": "*",
     "js-yaml": "~2.1.0",
-    "coffee-script": "*",
-    "async": "~0.2.7"
+    "restify": "^2.8.5",
+    "underscore": "*"
   },
   "devDependencies": {
     "jade": "*",
@@ -22,7 +22,7 @@
   "keywords": [
     "swagger",
     "swagger-ui",
-    "express",
+    "restify",
     "api",
     "jsdoc",
     "yml",
@@ -30,5 +30,5 @@
     "coffee-script",
     "restful"
   ],
-  "repository": "git://github.com/fliptoo/swagger-express"
+  "repository": "git://github.com/yourdelivery/swagger-restify"
 }

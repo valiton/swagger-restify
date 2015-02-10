@@ -1,19 +1,21 @@
-{swagger-express}
+{swagger-restify}
 =========
+This project is a fork of [swagger-express](https://github.com/fliptoo/swagger-express) project with some fixes that
+it possible to use it with [restify](http://mcavage.me/node-restify/) framework.
 
 [Swagger](https://developers.helloreverb.com/swagger/) is a specification and complete framework 
 implementation for describing, producing, consuming, and visualizing RESTful web services.
 View [demo](http://petstore.swagger.wordnik.com/).
 
-__{swagger-express}__ is a simple and clean solution to integrate swagger with express.
+__{swagger-restify}__ is a simple and clean solution to integrate swagger with restify.
 
 ## Installation
 
-    $ npm install -g swagger-express
+    $ npm install -g swagger-restify
 
 ## Quick Start
 
-Configure {swagger-express} as express middleware.
+Configure {swagger-restify}.
 
 
 `apiVersion`      -> Your api version.
@@ -35,25 +37,25 @@ Configure {swagger-express} as express middleware.
 `middleware`      -> Function before response.
 
 ```
-var swagger = require('swagger-express');
+var swagger = require('swagger-restify');
 
-app.configure(function(){
   ...
-  app.use(swagger.init(app, {
+  swagger.init(server, {
     apiVersion: '1.0',
     swaggerVersion: '1.0',
     swaggerURL: '/swagger',
     swaggerJSON: '/api-docs.json',
-    swaggerUI: './public/swagger/',
-    basePath: 'http://localhost:3000',
+    swaggerUI: './public',
+    basePath: 'http://localhost:8080',
     info: {
-      title: 'swagger-express sample app',
-      description: 'Swagger + Express = {swagger-express}'
+      title: 'swagger-restify sample app',
+      description: 'Swagger + Restify = {swagger-restify}'
     },
     apis: ['./api.js', './api.yml'],
     middleware: function(req, res){}
-  }));
-  app.use(app.router);
+  });
+
+  server.listen(8080);
   ...
 });
 ```
@@ -97,8 +99,8 @@ Example 'api.js'
  */
 exports.login = function (req, res) {
   var user = {};
-  user.username = req.param('username');
-  user.password = req.param('password');
+  user.username = req.params.username;
+  user.password = req.params.password;
   res.json(user);
 }
 
@@ -223,6 +225,8 @@ and run the example:
     
 # Credits
 
+- [swagger-express](https://github.com/fliptoo/swagger-express)
+- [Restify](http://mcavage.me/node-restify/)
 - [Express](https://github.com/visionmedia/express)
 - [swagger-jack](https://github.com/feugy/swagger-jack)
 
