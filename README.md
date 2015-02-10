@@ -1,7 +1,7 @@
 {swagger-restify}
 =========
 This project is a fork of [swagger-express](https://github.com/fliptoo/swagger-express) project with some fixes that
-it possible to use it with [restify](http://mcavage.me/node-restify/) framework.
+make it possible to use it with [restify](http://mcavage.me/node-restify/) framework.
 
 [Swagger](https://developers.helloreverb.com/swagger/) is a specification and complete framework 
 implementation for describing, producing, consuming, and visualizing RESTful web services.
